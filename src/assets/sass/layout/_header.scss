@@ -285,6 +285,10 @@
       transform: translateX(-10%) !important;
       top: 119px;
       margin: 0;
+
+      @include max(375) {
+        transform: translateX(0) !important;
+      }
     }
 
     &__menu-toggle {

@@ -2,6 +2,7 @@
 @import './page-modules/index.css';
 @import './componentes/index.css';
 @import './abstract/index.css';
+@import './pages/interna.css';
 
 html,
 body {
