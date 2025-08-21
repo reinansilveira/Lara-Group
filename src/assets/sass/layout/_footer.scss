@@ -1,0 +1,206 @@
+@use '../abstract' as *;
+
+.footer {
+    @include flexColumn(normal, center, column);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: $gray-light;
+
+    &__container {
+        margin: 4.375rem 9.375rem 0 9.375rem;
+        @include flex(start, space-between);
+        border-bottom: 1px solid $gray-dark;
+        padding-bottom: 4.563rem;
+
+        &__logo-small {
+            width: 110px;
+        }
+
+        a {
+            text-decoration: none;
+            @include font-footer-link;
+            color: $gray-dark;
+        }
+    }
+
+    &__text {
+        margin-bottom: 8px;
+        @include font-bold-sm;
+        color: $gray-dark;
+    }
+
+    &__items {
+        @include flexColumn(start, center, column);
+        gap: 8px;
+
+        a {
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 4px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $green-dark;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            &:hover {
+                color: $green-leaf;
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    .footer__social {
+        max-width: 250px;
+        @include flexColumn(center, center, column);
+        text-align: center;
+
+        &--item {
+            transition: .3s ease;
+
+            &:hover {
+                transform: scale(0.90);
+            }
+        }
+    }
+
+    &__social-title {
+        @include font-title-sm-spaced;
+        color: $gray-dark;
+        text-transform: uppercase;
+    }
+
+    &__social-media {
+        @include flex(center, center);
+        gap: 15px;
+        margin: 10px 0 18px 0;
+    }
+
+    &__logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__donate {
+        width: 169px !important;
+        height: 38px !important;
+        background-color: $green-leaf;
+        @include font-paragraph-bold;
+        letter-spacing: 3%;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    &__return-top {
+        @include flexColumn(start, space-between, column);
+        background-color: transparent;
+        color: $gray-dark;
+        display: inline;
+        @include font-secondary-sm;
+        letter-spacing: 5%;
+        cursor: pointer;
+        border: none;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
+        .return--image {
+            margin-left: 7px;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover {
+            background-color: #f1f1f1;
+            color: $green-leaf;
+
+            .return--image {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    .footer__return-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .footer__return-top:hover {
+        background-color: #f1f1f1;
+        color: #4CAF50;
+    }
+
+    &__bottom {
+        margin: 25px 156px 25px 150px;
+        @include flex(start, space-between);
+
+        p,
+        address {
+            @include font-sm-regular;
+            color: $gray-dark;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            margin-bottom: 2px;
+        }
+    }
+
+}
+
+@include max(768) {
+    .footer {
+        &__container {
+            flex-direction: column;
+            margin: 2rem 1rem;
+            gap: 2rem;
+        }
+
+        .footer__return-top {
+            opacity: 1;
+            pointer-events: auto;
+            display: inline;
+            align-self: flex-end;
+            order: -1;
+        }
+
+        nav,
+        aside {
+            max-width: 100%;
+        }
+
+        &__social-media {
+            flex-wrap: wrap;
+        }
+
+        &__bottom {
+            @include flexColumn(center, center, column);
+            margin: 1rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+
+            p,
+            address {
+                font-size: $font-size-xs;
+                line-height: 1.4;
+                word-break: break-word;
+            }
+        }
+    }
+}

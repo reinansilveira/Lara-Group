@@ -1,0 +1,86 @@
+@import './layout/index.css';
+@import './page-modules/index.css';
+@import './componentes/index.css';
+@import './abstract/index.css';
+
+html,
+body {
+  overflow-x: initial;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.layout-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::selection {
+  background-color: #43A047;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+main.activeGradient::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 40, 40, 0.4);
+  z-index: 3;
+}
+
+body.scroll-lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 760px) {
+  main {
+    width: 100%;
+    flex-direction: column;
+  }
+}

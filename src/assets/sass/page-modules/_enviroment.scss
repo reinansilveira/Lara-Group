@@ -1,0 +1,124 @@
+@use '../abstract' as *;
+
+.enviroment {
+    @include flexColumn(center, center, column);
+
+    &__section {
+        width: 70%;
+
+        @include max(760) {
+            width: 90%;
+        }
+
+        @include flexColumn(center, center, column);
+    }
+
+    &__quite {
+        color: $green-leaf;
+        @include font-footer-link;
+        margin-bottom: .625rem;
+        letter-spacing: .015em;
+    }
+
+    &__date {
+        margin-bottom: 1.25rem;
+        @include font-footer-link;
+        letter-spacing: .1em;
+        color: #929292;
+
+        time {
+            letter-spacing: .1em;
+            font-size: $font-size-sm-one;
+            font-family: $primary-font;
+            font-weight: $font-weight-medium-one;
+        }
+    }
+
+    h2 {
+        color: $gray-dark;
+        margin-bottom: .625rem;
+        font-family: $primary-font;
+        font-size: 2.25rem;
+        line-height: 2.375rem;
+        font-weight: $font-weight-medium-one;
+
+        @include max(760) {
+            font-size: 1.25rem;
+            line-height: 1.2rem;
+        }
+    }
+
+    &__event {
+        font-family: $primary-font;
+        font-size: $font-size-md;
+        line-height: 1.375rem;
+        font-weight: $font-weight-medium-one;
+        padding: 0 3.1rem;
+        margin-bottom: .93rem;
+        color: $gray-dark;
+
+        @include max(760) {
+            padding: 0;
+            font-size: 13px;
+        }
+
+        span {
+            text-align: center;
+            display: block;
+        }
+    }
+
+    &__share {
+        margin-bottom: 2.5rem;
+        letter-spacing: .1em;
+        font-weight: $font-weight-medium-one;
+        font-size: $font-size-sm-one;
+        font-family: $primary-font;
+        color: $gray-dark;
+    }
+
+    .social {
+        margin-bottom: 1.25rem;
+
+        &--icons {
+            display: flex;
+            gap: .625rem;
+        }
+    }
+
+    .image {
+        border-bottom-left-radius: 29px;
+        margin-bottom: .75rem;
+
+        @include max(760) {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0;
+            object-fit: contain;
+        }
+
+        &--description {
+            text-align: center;
+            font-size: $font-size-xs;
+            font-family: $primary-font;
+            font-weight: $font-weight-regular;
+            color: #929292;
+        }
+    }
+
+    .leaf {
+        align-self: self-start;
+        position: relative;
+        bottom: 101px;
+        height: 200px !important;
+        width: 196.04px !important;
+        left: 17px;
+        transform: rotate(-2deg);
+    }
+
+    @include max(760) {
+        .leaf {
+            display: none;
+        }
+    }
+}

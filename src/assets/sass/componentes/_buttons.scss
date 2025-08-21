@@ -1,0 +1,80 @@
+@use '../abstract' as *;
+
+.button {
+    height: 4.063rem;
+    border: none;
+    text-transform: uppercase;
+    color: $color-white;
+    @include font-title-lg;
+    line-height: 23px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--pink {
+        width: 12.5rem;
+        background-color: $cherry-pink;
+        transition: .4s ease;
+
+        &:hover {
+            background-color: #e94266da;
+        }
+
+        &.active {
+            background-color: #ff5279;
+            box-shadow: 0 1rem 2rem rgba(163, 63, 85, 0.4);
+            transform: translateY(-10px) scale(1.05);
+        }
+    }
+
+    &--blue {
+        width: 16.188rem;
+        background-color: #00B3CE;
+        transition: .4s ease;
+
+        &:hover {
+            background-color: #089db4bd;
+        }
+
+        &.active {
+            background-color: #00d6f5;
+            box-shadow: 0 1rem 2rem rgba(0, 179, 206, 0.4);
+            transform: translateY(-10px);
+        }
+    }
+
+    &--orange {
+        width: 12.5rem;
+        background-color: #ED7237;
+        transition: .4s ease;
+
+        &:hover {
+            background-color: #e6703abd;
+        }
+
+        &.active {
+            background-color: #ff874f;
+            box-shadow: 0 1rem 2rem rgba(237, 114, 55, 0.4);
+            transform: translateY(-10px);
+        }
+    }
+
+    &--green {
+        width: 7.5rem;
+        height: 2.5rem;
+        align-items: center;
+        background-color: $green-leaf;
+        cursor: pointer;
+        border: none;
+        transition: .4s ease;
+
+        &:hover {
+            transform: scale(.98);
+            background-color: $green-dark;
+        }
+
+        &.active {
+            background-color: $green-dark;
+            transform: translateY(-10px);
+        }
+    }
+}

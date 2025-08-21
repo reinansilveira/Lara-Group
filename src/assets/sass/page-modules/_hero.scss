@@ -1,0 +1,171 @@
+@use '../abstract' as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+
+  &__carousel {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0));
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $green-leaf;
+    color: $color-white;
+    padding: 2rem 2rem 5rem 2rem;
+    width: 90%;
+    max-width: 800px;
+    @include flexColumn(center, center, column);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+      font-weight: $font-weight-ultra;
+      margin-bottom: 1rem;
+      font-family: $primary-font;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-family: $primary-font;
+      font-weight: $font-weight-regular;
+      line-height: 1.5;
+      max-width: 95%;
+    }
+  }
+
+  @include max(768) {
+    .splide__pagination {
+      top: 252px;
+      left: 0;
+      padding: 0 1em;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+
+    .splide__pagination__page {
+      width: 11px !important;
+      height: 11px !important;
+    }
+
+    &__image {
+      width: 100%;
+      height: 250px;
+      display: block;
+    }
+
+    &__text {
+      top: 230px;
+      padding: 1.25rem;
+      width: 90%;
+      height: 50%;
+
+      p {
+        font-size: $font-size-xs;
+      }
+
+      h2 {
+        font-size: $font-size-sm-three;
+      }
+    }
+
+    .splide__pagination__page {
+      top: 7.5rem;
+    }
+
+    .splide__arrow {
+      display: none;
+    }
+  }
+
+  .splide__arrow {
+    width: 100%;
+    background-color: $yellow-gold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 1;
+
+    svg {
+      fill: $color-white;
+      opacity: 1;
+      max-width: 120px;
+      max-height: 120px;
+    }
+
+    &:hover {
+      background-color: #FBD2097D;
+    }
+
+    &--prev {
+      left: 4.37rem;
+    }
+
+    &--next {
+      right: 4.37rem;
+    }
+  }
+
+  .splide__track,
+  .splide__list {
+    overflow: visible;
+  }
+
+  .splide__pagination__page {
+    border: 1px solid $yellow-gold;
+    background-color: #FBD2097D;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+    transition: background-color 0.3s;
+  }
+
+  .splide__pagination__page.is-active {
+    background-color: $yellow-gold;
+    align-items: center;
+    width: 6px;
+    height: 6px;
+  }
+
+  @include max(760) {
+    .hero__image {
+      max-width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+  }
+}

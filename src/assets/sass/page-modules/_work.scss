@@ -1,0 +1,113 @@
+@use '../abstract' as *;
+
+.work {
+    margin-top: 5rem;
+    width: 100%;
+
+    &__container {
+        background-color: $green-leaf;
+        padding: 6.25rem 9.375rem;
+        gap: 4.438rem;
+        display: flex;
+    }
+
+    &__information {
+        @include flex(center, start);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__text {
+        @include flexColumn(start, center, column);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__circle {
+        width: 6.25rem;
+        height: 6.25rem;
+        background-color: $yellow-gold;
+        @include flex(center, center);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    h4 {
+        @include font-title-lg;
+        letter-spacing: 2%;
+        margin: 0;
+        color: #FFFFFF;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        @include font-content-base;
+        line-height: 23px;
+        letter-spacing: 1%;
+        margin: 0;
+        color: #FFFFFF;
+        margin-bottom: 0.938rem;
+    }
+
+    a {
+        @include font-md-bold;
+        letter-spacing: 2%;
+        color: $yellow-gold;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+
+        svg {
+            transition: transform 0.5s ease;
+        }
+
+        &:hover {
+            color: #e0b800;
+
+            svg {
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+@include max(768) {
+
+    .work {
+        &__container {
+            @include flexColumn(flex-start, flex-start, column);
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 5rem;
+        }
+
+        &__information {
+            @include flexColumn(center, start, column);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 5rem;
+            width: 100%;
+        }
+
+        &__text {
+            @include flexColumn(center, center, column);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            width: 250px;
+        }
+    }
+
+}

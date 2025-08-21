@@ -1,0 +1,90 @@
+@use '../abstract' as *;
+
+.challengeWord {
+    background-color: #F4F4F4;
+    @include flex(start, space-between);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 100%;
+    padding: 7rem 9.375rem 9.8rem;
+
+    .splide__slide {
+        position: relative;
+        overflow: visible;
+    }
+
+    &__space {
+        width: 100%;
+        @include flex(start, space-between);
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        max-width: 554px;
+        gap: 0.625rem;
+    }
+
+    h3 {
+        @include font-ultra-xl;
+        letter-spacing: 0.02em;
+        color: #282828;
+    }
+
+    p {
+        margin-top: 10px;
+        @include font-content-base;
+        letter-spacing: 0.01em;
+        color: #282828;
+    }
+}
+
+.splide__slide {
+    @include flex(center, center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@include max(760) {
+    .challengeWord {
+        @include flexColumn(center, center, column);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        padding: 3.125rem;
+
+        h3 {
+            font-size: $font-size-xl;
+        }
+
+        p {
+            font-size: $font-size-sm-two;
+        }
+
+        img {
+            margin: 3.125rem 0 3.125rem 0;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .challengeWord__space {
+        @include flexColumn(center, center, column);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        align-items: center;
+    }
+}
