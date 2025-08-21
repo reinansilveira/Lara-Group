@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "compile:sass": "sass src/assets/sass/:src/assets/css/ -w --style=compressed --source-map",
+        "compile:sass": "sass src/assets/sass/:dist/assets/css/ --style=compressed --source-map",
+        "build": "npm run compile:sass && cp -r src/pages/* dist/",
         "dev": "node src/assets/js/server.js",
         "start": "npm-run-all --parallel compile:sass dev"
     },
