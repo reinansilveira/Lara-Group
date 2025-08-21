@@ -1,6 +1,8 @@
 # 🚀 Lara Group - Projeto Web Completo
 
 > Um projeto web moderno e responsivo desenvolvido com HTML, CSS (Sass), JavaScript e Express.js
+- [Link Home](https://lara-group.onrender.com/home.html).
+-[Link Interna](https://lara-group.onrender.com/interna.html).
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -148,3 +150,4 @@ O projeto está configurado para:
 3. **CSS compilado** aparece automaticamente em `src/assets/css/`
 4. **Não edite** diretamente os arquivos `.css` gerados
 5. **Use o navegador** para ver as mudanças em tempo real
+
