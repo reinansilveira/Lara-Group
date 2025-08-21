@@ -1,19 +1,19 @@
 {
-    "name": "project-title",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
-        "compile:sass": "sass src/assets/sass/:dist/assets/css/ --style=compressed --source-map",
-        "build": "npm run compile:sass && cp -r src/pages/* dist/",
-        "dev": "node src/assets/js/server.js",
-        "start": "npm-run-all --parallel compile:sass dev"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "express": "^4.21.2",
-        "sass": "^1.75.0",
-        "w3c-html-validator": "^1.1.3"
-    },
-    "description": ""
+  "name": "project-title",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass src/assets/sass/:dist/assets/css/ --style=compressed --source-map",
+    "build": "mkdir -p dist && cp -r src/assets dist/ && cp -r src/pages/* dist/",
+    "dev": "node src/assets/js/server.js",
+    "start": "npm-run-all --parallel compile:sass dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.21.2",
+    "sass": "^1.75.0",
+    "w3c-html-validator": "^1.1.3"
+  },
+  "description": ""
 }
