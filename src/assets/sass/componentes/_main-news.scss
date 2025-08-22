@@ -97,6 +97,7 @@
         bottom: -102px;
         z-index: -1;
         transform: scaleX(-1);
+        right: -31.25rem;
     }
 
     @include max(1200) {
